@@ -14,5 +14,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file lux2021/Dockerfile --tag lux2021:$(date +%s)
+    #- name: Build the Docker image
+    #  run: docker build . --file lux2021/Dockerfile --tag lux2021:$(date +%s)
+    # https://github.com/docker/build-push-action/tree/releases/v1
+    - name: Build and Push Docker Iamge
+      uses: docker/build-push-action@v1
+      with: 
+        #registry: ${{ secrets.ALI_DOCKER_HUB_REGISTRY }}
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD  }}
+        repository: wx5223/lux2021
+        dockerfile: lux2021/Dockerfile
+        #tag_with_sha: true
+        tags: latest, $(date +%s)
