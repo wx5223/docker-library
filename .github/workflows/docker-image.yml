@@ -26,4 +26,4 @@ jobs:
         repository: wx5223/lux2021
         dockerfile: lux2021/Dockerfile
         #tag_with_sha: true
-        tags: latest, $(date +%s)
+        tags: latest
