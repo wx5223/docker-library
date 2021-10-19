@@ -45,6 +45,3 @@ RUN npm i -g lux-ai-vis --unsafe-perm=true --allow-root
 RUN pip install numpy
 RUN pip install scipy
 
-RUN pip install git+https://github.com/glmcdona/LuxPythonEnvGym.git
-RUN pip install kaggle-environments -U
-
